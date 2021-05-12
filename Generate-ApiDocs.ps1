@@ -16,9 +16,13 @@ param(
 
     # Create a .zip file of the output.
     [string]
-    $ZipOutput = $null
+    $ZipOutput = $null,
+
+    [string]
+    $SrcFolderOverride = $null
 )
 
+$ErrorActionPreference = "STOP"
 $DocfxProjectFile = "$DocfxProjectFolder/docfx.json"
 
 # use NuGet restore to a local path to get the appropraite docfx.console package
@@ -36,6 +40,21 @@ $overrides = [PSCustomObject]@{
 }
 
 $overrides | ConvertTo-Json | Out-File "$DocfxProjectFolder/overrides.json" -Encoding utf8NoBOM
+
+if ($SrcFolderOverride) {
+    $origContent = Get-Content $DocfxProjectFile
+    $json = $origContent | ConvertFrom-Json
+    $json
+    $curSrc = $json.metadata[0].src.src
+    $srcFolder = Get-Item $SrcFolderOverride
+    Push-Location $DocfxProjectFolder
+    $relativeSrcFolder = $srcFolder | Resolve-Path -Relative
+    Pop-Location
+    Write-Host "$relativeSrcFolder vs. $curSrc"
+    $relativeSrcFolder = $relativeSrcFolder -replace "\\","/"
+    $newContent = $origContent -replace $curSrc, $relativeSrcFolder
+    $newContent | Out-File $DocfxProjectFile -Encoding utf8NoBOM
+}
 
 if ($Serve) {
     docfx $DocfxProjectFile --serve
