@@ -39,7 +39,7 @@ $overrides = [PSCustomObject]@{
     _appFooter = "&copy; $year Couchbase, Inc."
 }
 
-$overrides | ConvertTo-Json | Out-File "$DocfxProjectFolder/overrides.json" -Encoding utf8NoBOM
+$overrides | ConvertTo-Json | Out-File "$DocfxProjectFolder/overrides.json" -Encoding utf8
 
 if ($SrcFolderOverride) {
     $origContent = Get-Content $DocfxProjectFile
@@ -53,7 +53,7 @@ if ($SrcFolderOverride) {
     Write-Host "$relativeSrcFolder vs. $curSrc"
     $relativeSrcFolder = $relativeSrcFolder -replace "\\","/"
     $newContent = $origContent -replace $curSrc, $relativeSrcFolder
-    $newContent | Out-File $DocfxProjectFile -Encoding utf8NoBOM
+    $newContent | Out-File $DocfxProjectFile -Encoding utf8
 }
 
 if ($Serve) {
