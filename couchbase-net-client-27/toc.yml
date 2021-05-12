@@ -1,0 +1,7 @@
+- name: API Documentation
+  href: obj/api/
+  homepage: api/Couchbase.yml
+- name: Release Notes
+  href: https://docs.couchbase.com/dotnet-sdk/2.7/sdk-release-notes.html
+- name: Getting Started
+  href: https://docs.couchbase.com/dotnet-sdk/2.7/start-using-sdk.html

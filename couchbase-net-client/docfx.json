@@ -1,0 +1,85 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../../couchbase-net-client",
+          "files": [
+            "src/Couchbase/Couchbase.csproj",
+            "src/Couchbase.Extensions.DependencyInjection/Couchbase.Extensions.DependencyInjection.csproj"
+          ]
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "articles/**.md",
+          "toc.yml",
+          "*.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      },
+      {
+        "src": "../../",
+        "files": [
+          "shared/images/**",
+          "shared/styles/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "globalMetadata": {
+      "_appName": "Couchbase .NET SDK",
+      "_appTitle": "Couchbase .NET API Documentation",
+      "_appFooter": "&copy; 2021 Couchbase, Inc.",
+      "_appLogoPath": "shared/images/couchbase-logo.svg",
+      "_gitContribute": {
+        "repo": "https://github.com/couchbase/couchbase-net-client/"
+      },
+      "_enableSearch": true,
+      "_enableNewTab": true
+    },
+    "dest": "_site",
+    "globalMetadataFiles": [ "overrides.json" ],
+    "fileMetadataFiles": [],
+    "template": [
+      "default",
+      "../shared/templates/couchbase"
+    ],
+    "postProcessors": [],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false,
+    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
+  }
+}

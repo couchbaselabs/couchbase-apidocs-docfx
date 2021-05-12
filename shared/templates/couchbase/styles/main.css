@@ -1,0 +1,26 @@
+nav h1 {
+    background-color : #333;
+    color : #d0d0d0;
+    padding: 5px 10px;
+    vertical-align: middle;
+    height: 25px;
+    font-size : 15px;
+    display: inline;
+}
+
+nav h1 a {
+    color : #d0d0d0;
+}
+
+.navbar .cb-nav-title {
+    float : left;
+}
+
+a.pageHeader {
+    font-family: 'Segoe UI' , Tahoma, Helvetica, Sans-Serif;
+    background-color: #333333;
+    color: #d0d0d0;
+    padding: 5px 10px;
+    vertical-align: middle;
+    height: 25px;
+}

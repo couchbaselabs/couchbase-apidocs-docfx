@@ -1,0 +1,7 @@
+- name: API Documentation
+  href: obj/api/
+  homepage: api/index.md
+- name: Release Notes
+  href: https://docs.couchbase.com/dotnet-sdk/current/project-docs/distributed-transactions-dotnet-release-notes.html
+- name: Getting Started
+  href: https://docs.couchbase.com/dotnet-sdk/current/howtos/distributed-acid-transactions-from-the-sdk.html
