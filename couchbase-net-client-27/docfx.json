@@ -10,7 +10,7 @@
         }
       ],
       "dest": "api",
-      "disableGitFeatures": false,
+      "disableGitFeatures": true,
       "disableDefaultFilter": false
     }
   ],
@@ -78,7 +78,7 @@
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false,
+    "disableGitFeatures": true,
     "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
   }
 }
