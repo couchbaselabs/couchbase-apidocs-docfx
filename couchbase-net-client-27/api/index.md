@@ -1,4 +1,4 @@
-# ![logo](~/shared/images/couchbase.png) Couchbase .NET SDK
+# ![logo](https://docs.couchbase.com/_/img/couchbase-logo.svg) Couchbase .NET SDK
 
 ## Namespaces
 * <xref:Couchbase>

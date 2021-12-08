@@ -1,4 +1,4 @@
-# ![logo](~/shared/images/couchbase.png) Couchbase Distributed Transactons for .NET
+# ![logo](https://docs.couchbase.com/_/img/couchbase-logo.svg) Couchbase Distributed Transactons for .NET
 [API Documentation](api/index.md) for the official Couchbase Distributed Transactons for .NET library for building apps using Microsoft Core and Standard on Windows, Linux and MacOS.
 
 ## Getting Started

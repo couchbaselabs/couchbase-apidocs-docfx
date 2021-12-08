@@ -24,3 +24,7 @@ a.pageHeader {
     vertical-align: middle;
     height: 25px;
 }
+
+#logo-couchbase-net-sdk img {
+    height : 1em;
+}

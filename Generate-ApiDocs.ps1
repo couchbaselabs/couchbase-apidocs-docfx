@@ -19,7 +19,10 @@ param(
     $ZipOutput = $null,
 
     [string]
-    $SrcFolderOverride = $null
+    $SrcFolderOverride = $null,
+
+    [string]
+    $DocfxConsoleVersion = "2.58.9"
 )
 
 $ErrorActionPreference = "STOP"
@@ -27,9 +30,10 @@ $DocfxProjectFile = "$DocfxProjectFolder/docfx.json"
 
 # use NuGet restore to a local path to get the appropraite docfx.console package
 mkdir nupkgs -ErrorAction Ignore
+"<Project><PropertyGroup><DocfxConsoleVersion>$DocfxConsoleVersion</DocfxConsoleVersion></PropertyGroup></Project>" | Out-File ".\Directory.build.props" -Encoding utf8NoBOM
 dotnet restore $DocfxProjectFolder/docfx.csproj --force --packages ./nupkgs
 
-Set-Alias docfx "./nupkgs/docfx.console/2.57.2/tools/docfx.exe"
+Set-Alias docfx "./nupkgs/docfx.console/$DocfxConsoleVersion/tools/docfx.exe"
 
 # Set the _appTitle to the API Version (see also: _appName in docfx.json)
 # Update the copyright notice to the current year.

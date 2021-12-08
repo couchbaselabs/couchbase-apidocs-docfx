@@ -1,4 +1,4 @@
-# ![logo](~/shared/images/couchbase.png) Couchbase Distributed Transactons for .NET
+# ![logo](https://docs.couchbase.com/_/img/couchbase-logo.svg) Couchbase Distributed Transactons for .NET
 
 ## Namespaces
 * <xref:Couchbase.Transactions>

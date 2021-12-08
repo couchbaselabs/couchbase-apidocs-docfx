@@ -1,4 +1,4 @@
-# ![logo](~/shared/images/couchbase.png) Couchbase .NET SDK
+# ![logo](https://docs.couchbase.com/_/img/couchbase-logo.svg) Couchbase .NET SDK
 [API Documentation](api/index.md) for the official Couchbase .NET SDK for building apps using Microsoft Core and Standard on Windows, Linux and MacOS.
 
 ## Getting Started

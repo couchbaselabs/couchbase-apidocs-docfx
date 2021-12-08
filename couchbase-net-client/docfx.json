@@ -6,12 +6,13 @@
           "src": "../../couchbase-net-client",
           "files": [
             "src/Couchbase/Couchbase.csproj",
-            "src/Couchbase.Extensions.DependencyInjection/Couchbase.Extensions.DependencyInjection.csproj"
+            "src/Couchbase.Extensions.DependencyInjection/Couchbase.Extensions.DependencyInjection.csproj",
+            "src/Couchbase.Extensions.OpenTelemetry/Couchbase.Extensions.OpenTelemetry.csproj"
           ]
         }
       ],
       "dest": "api",
-      "disableGitFeatures": true,
+      "disableGitFeatures": false,
       "disableDefaultFilter": false
     }
   ],
@@ -38,7 +39,7 @@
         ]
       },
       {
-        "src": "../",
+        "src": "../../",
         "files": [
           "shared/images/**",
           "shared/styles/**"
@@ -79,7 +80,7 @@
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": true,
+    "disableGitFeatures": false,
     "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
   }
 }
