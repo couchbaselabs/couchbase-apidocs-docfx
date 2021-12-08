@@ -30,7 +30,7 @@ $DocfxProjectFile = "$DocfxProjectFolder/docfx.json"
 
 # use NuGet restore to a local path to get the appropraite docfx.console package
 mkdir nupkgs -ErrorAction Ignore
-"<Project><PropertyGroup><DocfxConsoleVersion>$DocfxConsoleVersion</DocfxConsoleVersion></PropertyGroup></Project>" | Out-File ".\Directory.build.props" -Encoding utf8NoBOM
+"<Project><PropertyGroup><DocfxConsoleVersion>$DocfxConsoleVersion</DocfxConsoleVersion></PropertyGroup></Project>" | Out-File ".\Directory.build.props" -Encoding ascii
 dotnet restore $DocfxProjectFolder/docfx.csproj --force --packages ./nupkgs
 
 Set-Alias docfx "./nupkgs/docfx.console/$DocfxConsoleVersion/tools/docfx.exe"
