@@ -25,8 +25,13 @@ param(
 $ErrorActionPreference = "STOP"
 $DocfxProjectFile = "$DocfxProjectFolder/docfx.json"
 
-# if docfx updates to an incompatible version, try adding --version 2.77.0 --allow-downgrade
-dotnet tool install -g docfx
+$docfxPath = Get-ChildItem "docfx/docfx.exe"
+if (!(Test-Path $docfxPath))
+{
+    Write-Error "Install docfx tool with the following command `n" \
+    "dotnet tool install docfx --version 2.77.0 --local-path docfx --add-source https://api.nuget.org/v3/index.json"
+}
+Set-Alias docfx $docfxPath
 
 # Set the _appTitle to the API Version (see also: _appName in docfx.json)
 # Update the copyright notice to the current year.
