@@ -20,27 +20,9 @@ if (!File.Exists(absolutePath))
     return;
 }
 
-var opts = new DotnetApiOptions()
-{
-    IncludeApi = (s) =>
-    {
-        Console.Out.WriteLine($"API={s.Name}, ({s.ContainingNamespace?.Name})");
-        return s switch
-        {
-            { Name: "get_PartialDefinitionPart" } => SymbolIncludeState.Exclude,
-            _ => SymbolIncludeState.Default
-        };
-    },
-    IncludeAttribute = (s) =>
-    {
-        Console.Out.WriteLine($"Attribute={s.Name}");
-        return SymbolIncludeState.Default;
-    },
-};
-
 try
 {
-    await Docfx.Dotnet.DotnetApiCatalog.GenerateManagedReferenceYamlFiles(absolutePath, opts);
+    await Docfx.Dotnet.DotnetApiCatalog.GenerateManagedReferenceYamlFiles(absolutePath);
     await Docfx.Docset.Build(absolutePath);
 }
 catch (Exception e)
